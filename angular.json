@@ -1,0 +1,358 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "my-app01": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/my-app01",
+      "sourceRoot": "projects/my-app01/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/my-app01",
+            "index": "projects/my-app01/src/index.html",
+            "main": "projects/my-app01/src/main.ts",
+            "polyfills": "projects/my-app01/src/polyfills.ts",
+            "tsConfig": "projects/my-app01/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/my-app01/src/favicon.ico",
+              "projects/my-app01/src/assets"
+            ],
+            "styles": [
+              "projects/my-app01/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/my-app01/src/environments/environment.ts",
+                  "with": "projects/my-app01/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "my-app01:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "my-app01:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "my-app01:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/my-app01/src/test.ts",
+            "polyfills": "projects/my-app01/src/polyfills.ts",
+            "tsConfig": "projects/my-app01/tsconfig.spec.json",
+            "karmaConfig": "projects/my-app01/karma.conf.js",
+            "assets": [
+              "projects/my-app01/src/favicon.ico",
+              "projects/my-app01/src/assets"
+            ],
+            "styles": [
+              "projects/my-app01/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/my-app01/tsconfig.app.json",
+              "projects/my-app01/tsconfig.spec.json",
+              "projects/my-app01/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/my-app01/e2e/protractor.conf.js",
+            "devServerTarget": "my-app01:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "my-app01:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "ang-words": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ang-words",
+      "sourceRoot": "projects/ang-words/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ang-words",
+            "index": "projects/ang-words/src/index.html",
+            "main": "projects/ang-words/src/main.ts",
+            "polyfills": "projects/ang-words/src/polyfills.ts",
+            "tsConfig": "projects/ang-words/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ang-words/src/favicon.ico",
+              "projects/ang-words/src/assets"
+            ],
+            "styles": [
+              "projects/ang-words/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ang-words/src/environments/environment.ts",
+                  "with": "projects/ang-words/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ang-words:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ang-words:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ang-words:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ang-words/src/test.ts",
+            "polyfills": "projects/ang-words/src/polyfills.ts",
+            "tsConfig": "projects/ang-words/tsconfig.spec.json",
+            "karmaConfig": "projects/ang-words/karma.conf.js",
+            "assets": [
+              "projects/ang-words/src/favicon.ico",
+              "projects/ang-words/src/assets"
+            ],
+            "styles": [
+              "projects/ang-words/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ang-words/tsconfig.app.json",
+              "projects/ang-words/tsconfig.spec.json",
+              "projects/ang-words/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ang-words/e2e/protractor.conf.js",
+            "devServerTarget": "ang-words:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ang-words:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "ang-geoloc": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ang-geoloc",
+      "sourceRoot": "projects/ang-geoloc/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ang-geoloc",
+            "index": "projects/ang-geoloc/src/index.html",
+            "main": "projects/ang-geoloc/src/main.ts",
+            "polyfills": "projects/ang-geoloc/src/polyfills.ts",
+            "tsConfig": "projects/ang-geoloc/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ang-geoloc/src/favicon.ico",
+              "projects/ang-geoloc/src/assets"
+            ],
+            "styles": [
+              "projects/ang-geoloc/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ang-geoloc/src/environments/environment.ts",
+                  "with": "projects/ang-geoloc/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ang-geoloc:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ang-geoloc:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ang-geoloc:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ang-geoloc/src/test.ts",
+            "polyfills": "projects/ang-geoloc/src/polyfills.ts",
+            "tsConfig": "projects/ang-geoloc/tsconfig.spec.json",
+            "karmaConfig": "projects/ang-geoloc/karma.conf.js",
+            "assets": [
+              "projects/ang-geoloc/src/favicon.ico",
+              "projects/ang-geoloc/src/assets"
+            ],
+            "styles": [
+              "projects/ang-geoloc/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ang-geoloc/tsconfig.app.json",
+              "projects/ang-geoloc/tsconfig.spec.json",
+              "projects/ang-geoloc/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ang-geoloc/e2e/protractor.conf.js",
+            "devServerTarget": "ang-geoloc:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ang-geoloc:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "my-app01"
+}
